@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
     tools:context=".TweenActivity">
 
     <TextView
@@ -15,4 +17,44 @@
         android:text="Exercis 3 Tween Animation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/TweenStratBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="Start"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="58dp"/>
+
+        <Button
+            android:id="@+id/TweenStopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            tools:layout_editor_absoluteX="121dp"
+            tools:layout_editor_absoluteY="59dp"
+            android:layout_marginLeft="20dp" />
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/earthImage"
+        android:layout_width="90dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/earth"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/sunImage"
+        android:layout_width="222dp"
+        android:layout_height="217dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/sun" />
+
+
+
+</LinearLayout>
