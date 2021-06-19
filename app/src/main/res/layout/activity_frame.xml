@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FramedAnimationActivity">
+    tools:context=".FrameActivity"
+    android:orientation="vertical"
+    android:layout_margin="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Exercise 2 Frame Animation"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="25dp" />
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            tools:layout_editor_absoluteX="30dp"
+            tools:layout_editor_absoluteY="56dp"
+            android:layout_marginRight="20dp" />
+
+        <Button
+            android:id="@+id/stopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="56dp" />
+    </TableRow>
+
+    <ImageView
+        android:id="@+id/defaultImg"
+        android:layout_width="match_parent"
+        android:layout_height="378dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/img1" />
+
+    <ImageView
+        android:id="@+id/frameImg"
+        android:layout_width="match_parent"
+        android:layout_height="378dp"
+        android:layout_marginTop="20dp" />
+
+
+
+</LinearLayout>
