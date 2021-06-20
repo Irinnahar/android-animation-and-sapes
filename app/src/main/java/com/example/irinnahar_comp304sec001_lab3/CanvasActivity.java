@@ -2,6 +2,7 @@ package com.example.irinnahar_comp304sec001_lab3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -9,12 +10,15 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
-public class CanvasActivity extends MenuActivity {
+public class CanvasActivity extends MenuActivity implements AdapterView.OnItemSelectedListener {
     private ImageView reusableImageView;
     TextView textViewX;
     TextView textViewY;
@@ -38,8 +42,7 @@ public class CanvasActivity extends MenuActivity {
         //create the paint for our drawings
         paint = new Paint();
         paint.setColor(Color.MAGENTA);
-        //paint.setStrokeMiter((float)0.5);
-        paint.setStrokeWidth(30);
+
 
         //creating a bitmap as content view for the image
         bitmap = Bitmap.createBitmap((int) getWindowManager()
@@ -89,8 +92,30 @@ public class CanvasActivity extends MenuActivity {
                 drawLeft();
             }
         });
-        //reusableImageView.setImageResource(R.drawable.green_rect);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner_line);
+// Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.line_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
     }// end of onCreate
+
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        // An item was selected. You can retrieve the selected item using
+        String select = parent.getItemAtPosition(pos).toString();
+        textViewX.setText(select);
+        //paint.setStrokeMiter((float)0.5);
+        paint.setStrokeWidth(Float.parseFloat(select));
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
 
     public void clearCanvas(View v)
     {
