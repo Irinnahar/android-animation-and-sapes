@@ -9,7 +9,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class TweenActivity extends AppCompatActivity {
+public class TweenActivity extends MenuActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,5 +42,6 @@ public class TweenActivity extends AppCompatActivity {
 
     private void stopAnimation(Animation animation, View img) {
         img.clearAnimation();
+
     }
 }
